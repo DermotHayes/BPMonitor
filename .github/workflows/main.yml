@@ -1,7 +1,7 @@
 name: BPMon_Pipeline
 
 env:
-  AZURE_WEBAPP_NAME: gc-bmicalculator-ga            # set this to your application's name
+  AZURE_WEBAPP_NAME: dh-BPMonitor-ca1           # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: 'publish'              # set this to the path to your web app project
 
 on:
