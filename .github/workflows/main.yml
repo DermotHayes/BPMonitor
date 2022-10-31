@@ -15,15 +15,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build for Release
+    
       run: dotnet build --configuration Release
     - name: Run unit tests
+    
       run: dotnet test .\BPMonitorUnitTest\BPMonitorUnitTest.csproj --no-restore --collect "Code coverage"
     - name: Publish
+    
       run: dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp' 
           # Deploy to Azure Web apps
+          
     - name: Run Azure webapp deploy action using publish profile credentials
       uses: azure/webapps-deploy@v2
       with: 
         app-name: ${{ env.AZURE_WEBAPP_NAME }}                        # your app name
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }} # Define secret variable in repository settings as per action documentation
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_262DADC217CB474B8C4C3E8AD2E05A5E  }} # Define secret variable in repository settings as per action documentation
         package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
