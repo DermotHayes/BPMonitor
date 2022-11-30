@@ -67,26 +67,26 @@ namespace SeleniumTest
                 driver.Navigate().GoToUrl(webAppUri);
 
                 // get weight in stone element
-                IWebElement weightInPoundsElement = driver.FindElement(By.Id("BP_Diastolic"));
+                IWebElement valueDiastolic = driver.FindElement(By.Id("BP_Diastolic"));
                 // enter 10 in element
-                weightInPoundsElement.SendKeys("50");
+                valueDiastolic.SendKeys("50");
 
                 // get weight in stone element
-                IWebElement heightFeetElement = driver.FindElement(By.Id("BP_Systolic"));
+                IWebElement valueSystolic = driver.FindElement(By.Id("BP_Systolic"));
                 // enter 10 in element
-                heightFeetElement.SendKeys("100");
+                valueSystolic.SendKeys("100");
 
                 // submit the form
                 driver.FindElement(By.Id("convertForm")).Submit();
 
                 // explictly wait for result with "BMIValue" item
-                IWebElement BMIValueElement = new WebDriverWait(driver, TimeSpan.FromSeconds(10))
-                    .Until(c => c.FindElement(By.Id("bmiVal")));
+                IWebElement categoryofBP = new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                    .Until(x => x.FindElement(By.Id("")));
 
                 // item comes back like "BMIValue: 24.96"
-                String bmi = BMIValueElement.Text.ToString();
+                String Cate = categoryofBP.Text.ToString();
 
-                StringAssert.EndsWith(bmi, "24.96");
+                StringAssert.Contains(Cate, "Ideal");
 
                 driver.Quit();
 

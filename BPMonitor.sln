@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blood Pressure", "Blood Pre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMonitorUnitTest", "BPMonitorUnitTest\BPMonitorUnitTest.csproj", "{A1CFD544-E3CD-4D11-A5C3-9473158229ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTest", "SeleniumTest\SeleniumTest.csproj", "{856BD825-F92D-487A-88D7-F4FFFBABCE01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD Test", "SeleniumTest\BDD Test.csproj", "{856BD825-F92D-487A-88D7-F4FFFBABCE01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
