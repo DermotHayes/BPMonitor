@@ -6,8 +6,10 @@ using OpenQA.Selenium;
 
 // NuGet install Chrome Driver
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.DevTools.V105.Network;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Xml.Linq;
 
 // run 2 instances of VS to do run Selenium tests against localhost
 // instance 1 : run web app e.g. on IIS Express
@@ -67,21 +69,24 @@ namespace SeleniumTest
                 driver.Navigate().GoToUrl(webAppUri);
 
                 // get weight in stone element
-                IWebElement valueDiastolic = driver.FindElement(By.Id("BP_Diastolic"));
-                // enter 10 in element
-                valueDiastolic.SendKeys("50");
-
-                // get weight in stone element
                 IWebElement valueSystolic = driver.FindElement(By.Id("BP_Systolic"));
                 // enter 10 in element
+                valueSystolic.Clear();
                 valueSystolic.SendKeys("100");
+
+                // get weight in stone element
+                IWebElement valueDiastolic = driver.FindElement(By.Id("BP_Diastolic"));
+                // enter 10 in element
+                valueDiastolic.Clear();
+                valueDiastolic.SendKeys("55");
+
+                //valueDiastolic.SendKeys("50");
 
                 // submit the form
                 driver.FindElement(By.Id("form1")).Submit();
 
                 // explictly wait for result with "BMIValue" item
-                IWebElement categoryofBP = new WebDriverWait(driver, TimeSpan.FromSeconds(10))
-                    .Until(x => x.FindElement(By.Id("")));
+                IWebElement categoryofBP = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => x.FindElement(By.Id("ActCategory")));
 
                 // item comes back like "BMIValue: 24.96"
                 String Cate = categoryofBP.Text.ToString();
