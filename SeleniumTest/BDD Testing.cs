@@ -44,8 +44,8 @@ namespace SeleniumTest
         public void Setup()
         {
             // read URL from SeleniumTest.runsettings
-            this.webAppUri = testContextInstance.Properties["webAppUri"].ToString();
-            //this.webAppUri = "https://dh-bpmonitor-ca1.azurewebsites.net/";
+            //this.webAppUri = testContextInstance.Properties["webAppUri"].ToString();
+            this.webAppUri = "https://dh-bpmonitor-ca1-staging.azurewebsites.net/";
         }
 
         [TestMethod]
@@ -77,7 +77,7 @@ namespace SeleniumTest
                 valueSystolic.SendKeys("100");
 
                 // submit the form
-                driver.FindElement(By.Id("convertForm")).Submit();
+                driver.FindElement(By.Id("form1")).Submit();
 
                 // explictly wait for result with "BMIValue" item
                 IWebElement categoryofBP = new WebDriverWait(driver, TimeSpan.FromSeconds(10))
