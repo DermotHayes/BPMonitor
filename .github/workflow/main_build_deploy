@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'dh-BPMonitor-ca1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2F9CDE8B8C3142DD9A9033D9A1197E04 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_262DADC217CB474B8C4C3E8AD2E05A5E }}
           package: .
