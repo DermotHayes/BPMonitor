@@ -6,7 +6,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - dh-BPMonitor-ca1-stag
 on:
   push:
     branches:
-      - Version2.0
+      - master
   workflow_dispatch:
 
 jobs:
