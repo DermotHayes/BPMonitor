@@ -12,9 +12,9 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: #aqua;
+  background-color: #ffd800;
+  border-color: #000000;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -31,7 +31,7 @@ a {
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .25rem .75rem #0077cc;
 }
 
 button.accept-policy {

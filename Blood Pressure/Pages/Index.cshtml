@@ -2,15 +2,20 @@
 @model BPCalculator.Pages.BloodPressureModel
 
 @{
-    ViewData["Title"] = "Production BP Category Calculator";
+    ViewData["Title"] = "Dermots Category Calculator";
+    Layout = "_Layout";
 }
 
 
-<h4>Dermots BP Category Calculator</h4>
-<h7> This is a controlled system do not edit ot code merge</h7>
+<h4>BP Category Calculator</h4>
 <hr />
+<h5 class="card-title">Health Analysis</h5>
+
 <div class="row">
-    <div class="col-md-4">
+  <div class="col-sm-6" style="max-width: 25rem">
+    <div class="card bg-light mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Heart Rate Data</h5>
         <form method="post" id="form1">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -24,19 +29,69 @@
                 <span asp-validation-for="BP.Diastolic" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-default" />
             </div>
-            @if (ViewData.ModelState.IsValid)
-            {
-                <div class="form-group">
-                    @Html.DisplayFor(model => model.BP.Category, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-                <img src="~/bpchart.JPG" />
-            }
-        </form>
+            <input class="btn btn-primary" input type="submit" value="Submit" style="margin:5px;" />
+           </form>
+      </div>
     </div>
-</div>
+  </div>
+  <div class="col-sm-6" style="width: 25rem">
+    <div class="card bg-light mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Body Mass Index Data </h5>
+        <form method="post" id="form2">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BP.Systolic" class="control-label"></label>
+                <input asp-for="BP.Systolic" class="form-control" />
+                <span asp-validation-for="BP.Systolic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BP.Diastolic" class="control-label"></label>
+                <input asp-for="BP.Diastolic" class="form-control" />
+                <span asp-validation-for="BP.Diastolic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            </div>
+            <input class="btn btn-primary" input type="submit" value="Submit" style="margin:5px;" />
+           </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6" style="width: 25rem">
+    <div class="card bg-light mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Blood Pressure Data</h5>
+           <form method="post" id="form3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BP.Systolic" class="control-label"></label>
+                <input asp-for="BP.Systolic" class="form-control" />
+                <span asp-validation-for="BP.Systolic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BP.Diastolic" class="control-label"></label>
+                <input asp-for="BP.Diastolic" class="form-control" />
+                <span asp-validation-for="BP.Diastolic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            </div>
+            <input class="btn btn-primary" input type="submit" value="Submit" style="margin:5px;" />
+           </form>
+      </div>
+    </div>
+  </div>
+</div>  
 
+             @if (Request.Method == "POST")
+            {
+    <div>
+        <span id = "Categ" >@Html.DisplayNameFor(m => m.BP.Category)</span>
+        <span id = "ActCategory" >@Html.DisplayFor(m => m.BP.Category)</span>
+    </div>
+    <img src="~/bpchart.JPG" >
+
+}
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
