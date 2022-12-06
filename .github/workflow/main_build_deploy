@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'dh-BPMonitor-ca1-staging'
+          app-name: 'dh-BPMonitor-ca1'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2F9CDE8B8C3142DD9A9033D9A1197E04 }}
           package: .
