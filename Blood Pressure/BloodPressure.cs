@@ -58,4 +58,10 @@ namespace BPCalculator
             }
         }
     }
+    public class TargetHR
+
+    {
+        public int Age { get; set; }
+        public int Resting{ get; set; }
+    }
 }
