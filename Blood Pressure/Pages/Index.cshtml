@@ -11,8 +11,8 @@
 <hr />
 <div class="row">
   <div class="col-sm-6" style="max-width: 25rem">
-    <div class="card bg-light mb-3">
-      <div class="card-body">
+        <div class="card text-white bg-secondary mb-3">
+        <div class="card-body">
         <h5 class="card-title">Heart Rate Data</h5>
         <form method="post" id="form1">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="col-sm-6" style="width: 25rem">
-    <div class="card bg-light mb-3">
+      <div class="card text-white bg-secondary mb-3">
       <div class="card-body">
         <h5 class="card-title">Body Mass Index Data </h5>
         <form method="post" id="form2">
@@ -57,7 +57,7 @@
     </div>
   </div>
   <div class="col-sm-6" style="width: 25rem">
-    <div class="card bg-light mb-3">
+    <div class="card text-white bg-secondary mb-3">
       <div class="card-body">
         <h5 class="card-title">Blood Pressure Data</h5>
            <form method="post" id="form3">
@@ -87,7 +87,6 @@
         <span id = "Categ" >@Html.DisplayNameFor(m => m.BP.Category)</span>
         <span id = "ActCategory" >@Html.DisplayFor(m => m.BP.Category)</span>
     </div>
-    <img src="~/bpchart.JPG" >
 
 }
 @section Scripts {
