@@ -33,6 +33,7 @@ jobs:
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
+          
 
   deploy:
     runs-on: windows-latest
@@ -55,3 +56,13 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2F9CDE8B8C3142DD9A9033D9A1197E04 }}
           package: .
+
+  # Run Selenium tests
+     - name: Run Selenium tests
+      run: dotnet test ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp/SeleniumTest.dll /Settings:SeleniumTest.runsettings --logger:"trx;LogFileName=selenium.trx"
+  
+    # Upload results of selenium tests
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Selenium Tests Results
+        path: TestResults/selenium.trx
