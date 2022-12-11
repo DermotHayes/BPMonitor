@@ -26,7 +26,7 @@ jobs:
         run: dotnet build --configuration Release
         
       - name: Run unit tests
-        run: dotnet test BPMonitorUnitTest/BPMonitorUnitTest.csproj --collect "Code coverage" 
+        run: dotnet test BPMonitorUnitTest/BPMonitorUnitTest.csproj --verbosity normal -l:trx
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
