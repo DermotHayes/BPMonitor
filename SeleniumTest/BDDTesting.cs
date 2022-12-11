@@ -64,6 +64,13 @@ namespace BDDTest
                 driver.Navigate().GoToUrl(webAppUri);
 
                 // get weight in stone element
+                IWebElement valueAge = driver.FindElement(By.Id("BP_Age"));
+                // enter 10 in element
+                valueAge.Clear();
+                valueAge.SendKeys("43");
+
+
+                // get weight in stone element
                 IWebElement valueSystolic = driver.FindElement(By.Id("BP_Systolic"));
                 // enter 10 in element
                 valueSystolic.Clear();
@@ -75,6 +82,12 @@ namespace BDDTest
                 valueDiastolic.Clear();
                 valueDiastolic.SendKeys("55");
 
+                // get weight in stone element
+                IWebElement valueResting = driver.FindElement(By.Id("BP_Resting"));
+                // enter 10 in element
+                valueResting.Clear();
+                valueResting.SendKeys("100");
+
                 //valueDiastolic.SendKeys("50");
 
                 // submit the form
@@ -82,11 +95,14 @@ namespace BDDTest
 
                 // explictly wait for result with "BMIValue" item
                 IWebElement categoryofBP = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => x.FindElement(By.Id("ActCategory")));
-
+                IWebElement RestingCate = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => x.FindElement(By.Id("HRCategory")));
                 // item comes back like "BMIValue: 24.96"
                 String Cate = categoryofBP.Text.ToString();
+                String HR_Cat = RestingCate.Text.ToString();
+
 
                 StringAssert.Contains(Cate, "Ideal");
+                StringAssert.Contains(HR_Cat , "Abnormal");
 
                 driver.Quit();
 
