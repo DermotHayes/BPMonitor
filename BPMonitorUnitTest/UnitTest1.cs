@@ -41,5 +41,6 @@ namespace BPMonitorUnitTest
             Assert.AreEqual(THeartrate.HRCategory, TargetHRCategory.normal);
 
         }
+
     }
 }
