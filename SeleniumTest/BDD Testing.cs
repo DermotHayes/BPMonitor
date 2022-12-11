@@ -84,7 +84,7 @@ namespace BDDTest
                 //valueDiastolic.SendKeys("50");
 
                 // submit the form
-                driver.FindElement(By.Id("form1")).Submit();
+                driver.FindElement(By.Id("form3")).Submit();
 
                 // explictly wait for result with "BMIValue" item
                 IWebElement categoryofBP = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => x.FindElement(By.Id("ActCategory")));
@@ -92,7 +92,7 @@ namespace BDDTest
                 // item comes back like "BMIValue: 24.96"
                 String Cate = categoryofBP.Text.ToString();
 
-                StringAssert.Contains(Cate, "Low");
+                StringAssert.Contains(Cate, "Ideal");
 
                 driver.Quit();
 
