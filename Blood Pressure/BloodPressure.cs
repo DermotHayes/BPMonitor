@@ -11,6 +11,12 @@ namespace BPCalculator
         [Display(Name = "Pre-High Blood Pressure")] PreHigh,
         [Display(Name = "High Blood Pressure")] High
     };
+    public enum TargetHRCategory
+    {
+        [Display(Name = "Resting HR is Abnormal")] abnormal,
+        [Display(Name = "Resting HR is Normal")] normal,
+
+    };
 
     public class BloodPressure
     {
@@ -25,7 +31,9 @@ namespace BPCalculator
         [Range(DiastolicMin, DiastolicMax, ErrorMessage = "Invalid Diastolic Value")]
         public int Diastolic { get; set; }                      // mmHG
 
+        public int Age { get; set; }
 
+        public int Resting { get; set; }
 
         // calculate BP category
         public BPCategory Category
@@ -35,6 +43,7 @@ namespace BPCalculator
             {
                 Systolic = this.Systolic;
                 Diastolic = this.Diastolic;
+
 
                 if (Systolic >= 140 || Diastolic >= 90)
                 {
@@ -54,28 +63,34 @@ namespace BPCalculator
 
                 {
                     return BPCategory.Low;
+             
                 }
             }
         }
-    }
-    public class TargetHR
 
-    { 
-        public int Age { get; set; }
-        public int Resting{ get; set; }
+        public TargetHRCategory HRCategory
 
-     public double MAXHRValue
         {
             get
+
             {
+                Age = this.Age;
+                Resting = this.Resting;
+                double maxhr = 220 - Age;
 
-                double MaxHR = 220 - Age;
-                return MaxHR;
+                if ((maxhr * 0.6) > Resting)
+                {
+                    return TargetHRCategory.abnormal;
 
-           
+                }
+                else
+                {
+                    return TargetHRCategory.normal;
+
+                }
+
             }
+
         }
-
-
     }
 }
