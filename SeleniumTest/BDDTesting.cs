@@ -1,16 +1,10 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 // NuGet install Selenium WebDriver package and Support Classes
 
 using OpenQA.Selenium;
 
 // NuGet install Chrome Driver
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.DevTools.V105.CSS;
-using OpenQA.Selenium.DevTools.V105.Network;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Xml.Linq;
 
 // run 2 instances of VS to do run Selenium tests against localhost
 // instance 1 : run web app e.g. on IIS Express

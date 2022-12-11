@@ -1,5 +1,4 @@
 using BPCalculator;
-using System.Runtime.Intrinsics.X86;
 
 namespace BPMonitorUnitTest
 {
@@ -29,18 +28,29 @@ namespace BPMonitorUnitTest
             Assert.AreEqual(BPressure.Category, BPCategory.PreHigh);
 
         }
-        public void TestMethod4()
+    public class UnitTest2
         {
-            BloodPressure BPressure = new BloodPressure() { Systolic = 100, Diastolic = 70 };
-            Assert.AreEqual(BPressure.Category, BPCategory.Ideal);
+
+
+            public void TestMethod4()
+            {
+                BloodPressure BPressure = new BloodPressure() { Systolic = 100, Diastolic = 70 };
+                Assert.AreEqual(BPressure.Category, BPCategory.Ideal);
+
+            }
+            public void TestMethod5()
+            {
+                BloodPressure THeartrate = new BloodPressure() { Age = 40, Resting = 43 };
+                Assert.AreEqual(THeartrate.HRCategory, TargetHRCategory.normal);
+
+            }
+            public void TestMethod6()
+            {
+                BloodPressure THeartrate = new BloodPressure() { Age = 40, Resting = 43 };
+                Assert.AreEqual(THeartrate.HRCategory, TargetHRCategory.normal);
+
+            }
 
         }
-        public void TestMethod5()
-        {
-            BloodPressure THeartrate = new BloodPressure() { Age = 40, Resting = 43 };
-            Assert.AreEqual(THeartrate.HRCategory, TargetHRCategory.normal);
-
-        }
-
     }
 }

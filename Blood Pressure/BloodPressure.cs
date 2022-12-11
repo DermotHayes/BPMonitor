@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BPCalculator
 {
@@ -63,7 +62,7 @@ namespace BPCalculator
 
                 {
                     return BPCategory.Low;
-             
+
                 }
             }
         }
@@ -84,7 +83,7 @@ namespace BPCalculator
 
                 }
 
-             
+
                 else
                 {
                     return TargetHRCategory.abnormal;

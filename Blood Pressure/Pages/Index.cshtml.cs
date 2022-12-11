@@ -9,14 +9,14 @@ namespace BPCalculator.Pages
     {
         [BindProperty]                              // bound on POST
         public BloodPressure BP { get; set; }
-   
-  
+
+
 
         // setup initial data
         public void OnGet()
         {
             BP = new BloodPressure();
-           // HR = new TargetHR();
+            // HR = new TargetHR();
         }
 
         // POST, validate
@@ -27,11 +27,11 @@ namespace BPCalculator.Pages
             {
                 ModelState.AddModelError("", "Systolic must be greater than Diastolic");
             }
- 
+
             return Page();
         }
-       
 
-       
+
+
     }
 }
