@@ -60,8 +60,22 @@ namespace BPCalculator
     }
     public class TargetHR
 
-    {
+    { 
         public int Age { get; set; }
         public int Resting{ get; set; }
+
+     public double MAXHRValue
+        {
+            get
+            {
+
+                double MaxHR = 220 - Age;
+                return MaxHR;
+
+           
+            }
+        }
+
+
     }
 }

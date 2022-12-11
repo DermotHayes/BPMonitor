@@ -6,6 +6,7 @@ using OpenQA.Selenium;
 
 // NuGet install Chrome Driver
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.DevTools.V105.CSS;
 using OpenQA.Selenium.DevTools.V105.Network;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -17,10 +18,10 @@ using System.Xml.Linq;
 // or use the dotnet vstest task
 // e.g. dotnet vstest seleniumtest\bin\debug\netcoreapp2.1\seleniumtest.dll /Settings:seleniumtest.runsettings
 
-namespace SeleniumTest
+namespace BDDTest
 {
     [TestClass]
-    public class UnitTest1
+    public class BDDTest
     {
         // .runsettings file contains test run parameters
         // e.g. URI for app
@@ -91,7 +92,7 @@ namespace SeleniumTest
                 // item comes back like "BMIValue: 24.96"
                 String Cate = categoryofBP.Text.ToString();
 
-                StringAssert.Contains(Cate, "Ideal");
+                StringAssert.Contains(Cate, "Low");
 
                 driver.Quit();
 
