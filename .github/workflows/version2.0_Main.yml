@@ -57,7 +57,7 @@ jobs:
 
   # Run Selenium tests
       - name: Run Selenium tests
-        run: dotnet test ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp/BDD Testing.dll --logger:"trx;LogFileName=selenium.trx"
+        run: dotnet test ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp/BDDTest.dll --logger:"trx;LogFileName=selenium.trx"
   
     # Upload results of selenium tests
       - uses: actions/upload-artifact@v2
