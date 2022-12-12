@@ -1,4 +1,4 @@
-name: owasp_dep_check
+name: dep_check
 
 on: 
   workflow_dispatch:
