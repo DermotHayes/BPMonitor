@@ -5,7 +5,7 @@
 name: ZAP BPMon
 
 env:
-  URI: https://dh-bpmonitor-ca1-staging.azurewebsites.net/         
+  URI: https://dh-bpmonitor-ca1.azurewebsites.net/         
   
 on:
   workflow_dispatch:                  # manually triggered
