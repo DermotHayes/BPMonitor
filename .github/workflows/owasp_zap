@@ -2,7 +2,7 @@
 # pull docker image
 # run baseline scan on URI and store test result file via volume mounted on container
 
-name: ZAP BMI
+name: ZAP BPMon
 
 env:
   URI: https://dh-bpmonitor-ca1-staging.azurewebsites.net/         
