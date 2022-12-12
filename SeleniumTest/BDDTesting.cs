@@ -6,11 +6,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
-// run 2 instances of VS to do run Selenium tests against localhost
-// instance 1 : run web app e.g. on IIS Express
-// instance 2 : from Test Explorer run Selenium test
-// or use the dotnet vstest task
-// e.g. dotnet vstest seleniumtest\bin\debug\netcoreapp2.1\seleniumtest.dll /Settings:seleniumtest.runsettings
 
 namespace BDDTest
 {
@@ -63,40 +58,29 @@ namespace BDDTest
                 // web app running on IIS express
                 driver.Navigate().GoToUrl(webAppUri);
 
-                // get weight in stone element
+               
                 IWebElement valueAge = driver.FindElement(By.Id("BP_Age"));
-                // enter 10 in element
                 valueAge.Clear();
                 valueAge.SendKeys("40");
 
-
-                // get weight in stone element
                 IWebElement valueSystolic = driver.FindElement(By.Id("BP_Systolic"));
-                // enter 10 in element
                 valueSystolic.Clear();
                 valueSystolic.SendKeys("100");
 
-                // get weight in stone element
                 IWebElement valueDiastolic = driver.FindElement(By.Id("BP_Diastolic"));
-                // enter 10 in element
                 valueDiastolic.Clear();
                 valueDiastolic.SendKeys("55");
 
-                // get weight in stone element
-                IWebElement valueResting = driver.FindElement(By.Id("BP_Resting"));
-                // enter 10 in element
+                 IWebElement valueResting = driver.FindElement(By.Id("BP_Resting"));
                 valueResting.Clear();
                 valueResting.SendKeys("60");
 
-                //valueDiastolic.SendKeys("50");
 
                 // submit the form
                 driver.FindElement(By.Id("form3")).Submit();
 
-                // explictly wait for result with "BMIValue" item
-                IWebElement categoryofBP = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => x.FindElement(By.Id("ActCategory")));
+                  IWebElement categoryofBP = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => x.FindElement(By.Id("ActCategory")));
                 IWebElement RestingCate = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => x.FindElement(By.Id("HRCategory")));
-                // item comes back like "BMIValue: 24.96"
                 String Cate = categoryofBP.Text.ToString();
                 String HR_Cat = RestingCate.Text.ToString();
 
@@ -106,7 +90,6 @@ namespace BDDTest
 
                 driver.Quit();
 
-                // alternative - use Cypress or Playright
             }
         }
     }
