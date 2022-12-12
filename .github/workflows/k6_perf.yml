@@ -20,5 +20,5 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: k6report
-        path: k6report.txt
+        name: perf_report
+        path: perfreport.txt
