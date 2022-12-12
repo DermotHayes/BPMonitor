@@ -16,7 +16,7 @@ jobs:
       run: docker pull loadimpact/k6
 
     - name: Run k6 load test, capture report
-      run: docker run -i loadimpact/k6 run - <perf_tests/perf_tests_2.js > perfreport.txt
+      run: docker run -i loadimpact/k6 run - <perf_tests/perf_test_2.js > perfreport.txt
 
     - uses: actions/upload-artifact@v2
       with:
