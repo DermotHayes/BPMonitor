@@ -42,7 +42,7 @@ namespace BDDTest
         {
             // read URL from SeleniumTest.runsettings
             //this.webAppUri = testContextInstance.Properties["webAppUri"].ToString();
-            this.webAppUri = "https://dh-bpmonitor-ca1-staging.azurewebsites.net/";
+            this.webAppUri = "https://dh-bpmonitor-ca1.azurewebsites.net/";
         }
 
         [TestMethod]
@@ -102,7 +102,7 @@ namespace BDDTest
 
 
                 StringAssert.Contains(Cate, "Ideal");
-                StringAssert.Contains(HR_Cat , "Abnormal");
+                StringAssert.Contains(HR_Cat , "Normal");
 
                 driver.Quit();
 
