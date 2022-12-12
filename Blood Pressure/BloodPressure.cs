@@ -77,7 +77,7 @@ namespace BPCalculator
                 Resting = this.Resting;
                 double maxhr = 220 - Age;
 
-                if (((maxhr * 0.6) < Resting) && ((maxhr * 0.8) > Resting))
+                if (((maxhr * 0.3) < Resting) && ((maxhr * 0.5) > Resting))
                 {
                     return TargetHRCategory.normal;
 

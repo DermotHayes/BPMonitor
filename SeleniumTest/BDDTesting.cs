@@ -67,7 +67,7 @@ namespace BDDTest
                 IWebElement valueAge = driver.FindElement(By.Id("BP_Age"));
                 // enter 10 in element
                 valueAge.Clear();
-                valueAge.SendKeys("43");
+                valueAge.SendKeys("40");
 
 
                 // get weight in stone element
@@ -86,7 +86,7 @@ namespace BDDTest
                 IWebElement valueResting = driver.FindElement(By.Id("BP_Resting"));
                 // enter 10 in element
                 valueResting.Clear();
-                valueResting.SendKeys("100");
+                valueResting.SendKeys("60");
 
                 //valueDiastolic.SendKeys("50");
 

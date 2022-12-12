@@ -59,7 +59,7 @@ namespace BPMonitorUnitTest
         [TestMethod]
         public void TestMethod8()
         {
-            BloodPressure THeartrate = new BloodPressure() { Age = 40, Resting = 109 };
+            BloodPressure THeartrate = new BloodPressure() { Age = 40, Resting = 60 };
             Assert.AreEqual(THeartrate.HRCategory, TargetHRCategory.normal);
 
         }
