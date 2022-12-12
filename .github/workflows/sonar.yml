@@ -16,8 +16,7 @@ jobs:
           args: >
             -Dsonar.organization=dermothayes
             -Dsonar.projectKey=DermotHayes_BPMonitor
-            -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.verbose=true
+            
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
  
